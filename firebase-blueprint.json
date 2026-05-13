@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "Audit": {
+      "title": "AI Spend Audit",
+      "description": "Calculated savings and tool stack analysis",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "useCase": { "type": "string" },
+        "teamSize": { "type": "number" },
+        "tools": { "type": "array" },
+        "totalSpend": { "type": "number" },
+        "totalSavings": { "type": "number" },
+        "summary": { "type": "string" },
+        "shareable": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["useCase", "teamSize", "tools", "totalSpend", "totalSavings"]
+    },
+    "Lead": {
+      "title": "Lead Capture",
+      "description": "User contact information captured after audit",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "company": { "type": "string" },
+        "role": { "type": "string" },
+        "teamSize": { "type": "number" },
+        "auditId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "auditId"]
+    }
+  },
+  "firestore": {
+    "audits": {
+      "schema": "Audit",
+      "description": "Collection of generated AI spend audits"
+    },
+    "leads": {
+      "schema": "Lead",
+      "description": "Collection of captured leads"
+    }
+  }
+}

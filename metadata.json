@@ -1,0 +1,6 @@
+{
+  "name": "Orbit AI Audit",
+  "description": "An end-to-end AI spend auditor that identifies overspending and provides actionable savings reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
